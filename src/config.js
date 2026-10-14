@@ -15,11 +15,11 @@ export const PROJECTS_VISIBLE = 3
 
 export const PROJECTS = [
   { id: 'homy', name: 'Homy Laundry App', tag: { en: 'Mobile App · UI/UX', id: 'Aplikasi Mobile · UI/UX' },
-    image: '/thumbnails/homy-laundry.png', url: 'https://www.behance.net/REPLACE_WITH_HOMY_LAUNDRY_PROJECT_URL' },
+    image: '/thumbnails/homy-laundry.png', url: 'https://www.behance.net/gallery/257034275/Homy-Laundry-App' },
   { id: 'ti', name: 'Web TI Redesign', tag: { en: 'Website Redesign · UI/UX', id: 'Redesain Website · UI/UX' },
-    image: '/thumbnails/web-ti-redesign.png', url: 'https://www.behance.net/REPLACE_WITH_WEB_TI_REDESIGN_PROJECT_URL' },
+    image: '/thumbnails/web-ti-redesign.png', url: 'https://www.behance.net/gallery/257034613/UMY-Information-Technology-Website-Redesign' },
   { id: 'absensi', name: 'Web Absensi Ksatriyan', tag: { en: 'Web App · Frontend', id: 'Aplikasi Web · Frontend' },
-    image: '/thumbnails/web-absensi-ksatriyan.png', url: 'https://www.behance.net/REPLACE_WITH_WEB_ABSENSI_PROJECT_URL' },
+    image: '/thumbnails/web-absensi-ksatriyan.png', url: 'https://www.behance.net/gallery/257034903/Kesatriyan-Attendance-System-Redesign' },
   // 👇 NEW PROJECT: replace name, tag, image file and Behance URL. Add more projects the same way.
   { id: 'marketchain', name: 'MarketChain', tag: { en: 'Web App · Full-Stack', id: 'Aplikasi Web · Full-Stack' },
     image: '/thumbnails/marketchain.png', url: 'https://www.behance.net/gallery/257105805/MarketChain' },
