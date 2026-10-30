@@ -23,7 +23,9 @@ export const PROJECTS = [
   // 👇 NEW PROJECT: replace name, tag, image file and Behance URL. Add more projects the same way.
   { id: 'marketchain', name: 'MarketChain', tag: { en: 'Web App · Full-Stack', id: 'Aplikasi Web · Full-Stack' },
     image: '/thumbnails/marketchain.png', url: 'https://www.behance.net/gallery/257105805/MarketChain' },
+    { id: 'moneymate', name: 'MoneyMate', tag: { en: 'Mobile App · UI/UX', id: 'Aplikasi Mobile · UI/UX' },
+  image: '/thumbnails/moneymate.png', url: 'https://www.behance.net/gallery/257812475/MoneyMate' },
 ]
 
 // Put PDFs in /public/certificates with these names (or change the paths).
-export const CERT_FILES = { bnsp: '/certificates/bnsp-csa.pdf', certiport: '/certificates/certiport-html-css.pdf' }
+export const CERT_FILES = { bnsp: '/certificates/bnsp-csa.pdf', certiport: '/certificates/certiport-html-css.pdf', bootcamp: '/certificates/bootcamp-2025.pdf' }
