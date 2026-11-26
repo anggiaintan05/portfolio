@@ -1,6 +1,10 @@
 // ✏️ EDIT THIS FILE to plug in your real links and files.
 // Put your photo at /public/photo.jpg (portrait works best, ~4:5) or change this path.
-export const PHOTO = '/photo.jpg'
+export const PHOTO = 'photo.jpg'
+export const GPA = 3.76
+
+// Route halaman koleksi sertifikat (dilayani oleh vercel.json -> index.html)
+export const ROUTES = { home: '/', certs: '/certifications' }
 
 export const LINKS = {
   email: 'anggiaintanw@gmail.com',
@@ -28,4 +32,15 @@ export const PROJECTS = [
 ]
 
 // Put PDFs in /public/certificates with these names (or change the paths).
-export const CERT_FILES = { bnsp: '/certificates/bnsp-csa.pdf', certiport: '/certificates/certiport-html-css.pdf', bootcamp: '/certificates/bootcamp-2025.pdf' }
+export const CERT_FILES = {
+  bnsp: '/certificates/bnsp-csa.pdf',
+  certiport: '/certificates/certiport-html-css.pdf',
+  bootcamp: '/certificates/bootcamp-2025.pdf',
+  dasarux: '/certificates/dicoding-dasarux.pdf',
+  frontend: '/certificates/dicoding-frontend.pdf',
+  pemrogramanweb: '/certificates/dicoding-pemrogramanweb.pdf',
+  javascript: '/certificates/dicoding-javascript.pdf',
+}
+
+// Thumbnail halaman pertama sertifikat (dibuat otomatis oleh scripts/make-thumbs.mjs).
+export const thumbOf = (file) => (file ? file.replace(/^\/certificates\//, '/certificates/thumbs/').replace(/\.pdf$/i, '.jpg') : '')
