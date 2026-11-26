@@ -14,7 +14,7 @@ export const content = {
       profile: [['Name', 'Anggia Intan Widyaningrum'], ['Education', 'Bachelor of Information Technology, Universitas Muhammadiyah Yogyakarta'], ['GPA', '3.76 / 4.00'], ['Location', 'Klaten, Indonesia']],
       profileTitle: 'Profile', certTitle: 'Certifications', viewPdf: 'View PDF',
       files: 'files', folderAria: 'Certifications folder',   // di en
-      hintHover: 'Hover to peek inside · click to open', hintTap: 'Tap to peek inside · tap again to open', openCollection: 'View collection',
+      hintHover: 'Hover to peek inside · click to open', hintTap: 'Tap to open', openCollection: 'View collection',
       certs: [
   { key: 'bnsp', name: 'BNSP Certified System Analyst (CSA)', year: '2026' },
   { key: 'certiport', name: 'Certiport IT Specialist – HTML & CSS', year: '2026' },
@@ -78,7 +78,7 @@ export const content = {
       profile: [['Nama', 'Anggia Intan Widyaningrum'], ['Pendidikan', 'Sarjana Teknologi Informasi, Universitas Muhammadiyah Yogyakarta'], ['IPK', '3,76 / 4,00'], ['Domisili', 'Klaten, Indonesia']],
       profileTitle: 'Profil', certTitle: 'Sertifikasi', viewPdf: 'Lihat PDF',
 files: 'berkas', folderAria: 'Folder sertifikasi',     // di id
-      hintHover: 'Arahkan kursor untuk mengintip · klik untuk membuka', hintTap: 'Ketuk untuk mengintip · ketuk lagi untuk membuka', openCollection: 'Lihat koleksi',
+      hintHover: 'Arahkan kursor untuk mengintip · klik untuk membuka', hintTap: 'Ketuk untuk membuka', openCollection: 'Lihat koleksi',
       certs: [
   { key: 'bnsp', name: 'BNSP Certified System Analyst (CSA)', year: '2026' },
   { key: 'certiport', name: 'Certiport IT Specialist – HTML & CSS', year: '2026' },

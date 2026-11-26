@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Icon from './Icon.jsx'
 import PdfViewer from './PdfViewer.jsx'
-import { useCanHover } from './hooks.js'
+import { useCanHover, useReducedMotion } from './hooks.js'
 import { loadPdfjs, preloadPdf } from './pdf.js'
 
 // Ikon file PDF (SVG) — dipakai ulang di halaman koleksi.
@@ -80,24 +80,30 @@ function PaperThumb({ src, file }) {
 
 // Folder interaktif.
 // Desktop (hover): hover = folder terbuka + file keluar, klik = buka koleksi.
-// Mobile/touch: tap pertama = folder terbuka, tap kedua (atau tombol) = buka koleksi.
+// Mobile/touch: folder terbuka otomatis saat berada di tengah layar (scroll-triggered) dan menutup lagi
+// saat keluar dari section; tap langsung membuka koleksi.
 export function CertFolder({ count, thumbs = [], files = [], hintHover, hintTap, cta, ariaLabel, onOpen }) {
   const canHover = useCanHover()
+  const reduced = useReducedMotion()
   const [open, setOpen] = useState(false)
-  const ref = useRef(null)
+  const btn = useRef(null)
 
   useEffect(() => {
-    if (!open) return
-    const away = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false) }
-    document.addEventListener('pointerdown', away)
-    return () => document.removeEventListener('pointerdown', away)
-  }, [open])
-
-  const click = () => { if (canHover || open) onOpen(); else setOpen(true) }
+    if (canHover) { setOpen(false); return }
+    if (reduced || !('IntersectionObserver' in window)) { setOpen(true); return } // tanpa animasi: langsung terbuka
+    const el = btn.current
+    if (!el) return
+    // Buka saat folder menyentuh pita di tengah layar; tutup baru saat benar-benar menjauh (hysteresis anti kedip)
+    const openIO = new IntersectionObserver(([e]) => { if (e.isIntersecting) setOpen(true) }, { rootMargin: '-30% 0px -30% 0px' })
+    const closeIO = new IntersectionObserver(([e]) => { if (!e.isIntersecting) setOpen(false) }, { rootMargin: '-8% 0px -8% 0px' })
+    openIO.observe(el)
+    closeIO.observe(el)
+    return () => { openIO.disconnect(); closeIO.disconnect() }
+  }, [canHover, reduced])
 
   return (
-    <div className={'cfolder' + (open ? ' open' : '')} ref={ref}>
-      <button type="button" className="cf-btn" onClick={click} onPointerEnter={preloadPdf} aria-label={ariaLabel}>
+    <div className={'cfolder' + (open ? ' open' : '')}>
+      <button type="button" className="cf-btn" ref={btn} onClick={onOpen} onPointerEnter={preloadPdf} aria-label={ariaLabel}>
         <span className="cf-stage" aria-hidden="true">
           <span className="cf-back" />
           {[1, 2, 3].map((n) => (
