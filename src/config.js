@@ -10,6 +10,7 @@ export const LINKS = {
   email: 'anggiaintanw@gmail.com',
   linkedin: 'https://www.linkedin.com/in/anggia-intan-widyaningrum-95269b2b1/',
   behance: 'https://www.behance.net/anggiawidyani',
+  github: 'https://github.com/anggiaintan',
 }
 
 // Put thumbnails in /public/thumbnails and set the file name in `image`.
@@ -40,6 +41,7 @@ export const CERT_FILES = {
   frontend: '/certificates/dicoding-frontend.pdf',
   pemrogramanweb: '/certificates/dicoding-pemrogramanweb.pdf',
   javascript: '/certificates/dicoding-javascript.pdf',
+  frontend2: '/certificates/dicoding-frontend-2.pdf',
 }
 
 // Thumbnail halaman pertama sertifikat (dibuat otomatis oleh scripts/make-thumbs.mjs).

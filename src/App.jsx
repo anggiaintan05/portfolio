@@ -169,6 +169,7 @@ export default function App() {
                   <ContactButton href={'mailto:' + LINKS.email} icon="mail" label="Email" />
                   <ContactButton href={LINKS.linkedin} icon="linkedin" label="LinkedIn" external />
                   <ContactButton href={LINKS.behance} icon="behance" label="Behance" external />
+                  <ContactButton href={LINKS.github} icon="github" label="GitHub" external />
                 </div>
               </div>
             </div>
